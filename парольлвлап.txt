@@ -1,0 +1,218 @@
+Level UP-1508
+sublime
+vagrant
+putty
+git
+github log
+===
+в вагрант файле настройки подключений и всего такого
+sudo  apt-get install php5-cli -установка пхп через вагрант
+
+===
+$ sudo nano /etc/php5/cli/php.ini
+-чтобы зайти в пхп.ини с правами супер юзера
+
+забрать через гит
+vagrant@vagrant-ubuntu-trusty-32:/vagrant/leto$ git remote add https://github.com/horechek/letoshop
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+vagrant@vagrant-ubuntu-trusty-32:/vagrant/leto$ git remote -v
+vagrant@vagrant-ubuntu-trusty-32:/vagrant/leto$ git remote add pb  https://github.com/horechek/letoshop
+vagrant@vagrant-ubuntu-trusty-32:/vagrant/leto$ git remote -v
+pb      https://github.com/horechek/letoshop (fetch)
+pb      https://github.com/horechek/letoshop (push)
+vagrant@vagrant-ubuntu-trusty-32:/vagrant/leto$ git remote add pb  https://github.com/horechek/letoshop
+
+===
+
+строчные\блочные
+
+
+http://htmlbook.ru/css/media
+@media screen and (min-width:1000px)
+js
+dev tools
+console_
+
+резюме с картинками
+
+какие стили наследуются
+как правило текстовые
+color font letter-spacing line-height text-align text-transform word-spacing etc
+
+не наследуются
+bakcground border margin padding
+можно наследовать с помощью inherit
+для float надо ширину указывать элемента
+в релатив у добоно позиционировать абсолют
+==================
+vagrant init ubuntu/trusty64(или32) потом vagrant up
+git init -включает репозиторий (папку)
+в гите есть алиасы 
+алиас на удобный вид претти
+git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+потом git hist
+=============
+10.0.2.15:номер порта - php
+php -S 10.0.2.15:8888
+get apt update - обновить убунуту
+еще алиасы
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.br branch
+git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+git config --global alias.type 'cat-file -t'
+git config --global alias.dump 'cat-file -p'
+
+перенос файла
+git mv название файла .папка 
+
+для создания ветки
+git checkout -b назавние ветки
+
+для переключения по веткам git checkout название ветки
+для разрешение конфликтов после merge удалить ту часть которая не нужна
+для возварта к изменению git checkout и номер хэша короткий который получается после алиаса  hist
+это хистори посмотреть изменений
+git checkout master - переход к полсденему изменению
+чтобы не пользоваться хэшами  можно делать им теги
+git tag названиетэга
+git checkout название файла - отмена изменения до последнего commit
+
+после git add название файла и до коммита
+git reset HEAD название файла
+после этого надо git checkout название файла
+
+чтобы отменить коммит
+git revert HEAD сброс до последнего коммита
+
+===========================
+css
+
+
+vertical-align -выравнивание для inline-block элементов
+тукстовым элементам если задать display block они будут как блочные
+dispaly table -ширина будет по ширине контента
+
+display flex для выравниваний вместо флоат и дисплэй
+justify-content - по ширине страницы
+flex css почитай
+=================
+1207
+var user = {
+	name: "Yolo",
+	age: 100
+}
+user это объект
+функции внутри объектов - метод
+xml - много лишнего
+json - ключи это строки(справа)в ""
+
+
+======================1907
+иконки в свг
+приложение для прототипирования макапс ninjamock
+пару страниц прототипа
+main
+product
+shutterstock - платный firestock - free
+https://habrahabr.ru/company/aiken/blog/129653/
+объекты вставлять через плэйс -будет смарт объект
+карточка товара 300
+
+в svg можно поменять цвет
+svg - через экуспорт слоя
+
+если слои заклипованы - надо в смарт объект
+
+===============================2807
+php
+
+MYSQL
+установка через вагрант
+ create TABLE `products` (`id` int(11) unsigned not null auto_increment , `title` varchar(254)not null, `description` text not null, `image` varchar(254) default null, `status` tinyint(1) not null default 1, `creata_at` datetime not null, `hot` tinyint(1) not null default 0, `category` varchar(254) default null, primary key(id)) engine=Innodb default charset=utf8;
+ERROR 1050 (42S01): Table 'products' already exists
+
+sudo apt-get install mysql-server
+mysql-client
+create
+use
+mysql -u root усли праоль то еще -p
+============1108
+pdo
+php data objects
+pdo - надо установить
+php -m расширения
+sudo apt-get install php5-mysql установка пдо для пхп
+==========================
+yii через консоль 
+serever php yii ./yii serve 10.0.2.15:8888
+composer https://getcomposer.org/download/
+sudo mv composer.phar /usr/local/bin/composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+etc/mysql -bia adress комментировать
+bower -для js на yii
+в vendor не менять
+php-fig.org - чтобы все хорошо работало 
+psr4 как должны называться классы и нэймспейсы и где они должны лежать
+21.40
+index.php?gii -для генетратора модели
+http://localhost:8888/index.php?r=gii
+allowedIPs для yii
+сделал модель потом в сайтконтроллере 
+render для отображения
+public function actionIndex()
+    {
+        $products = Products::find()->all();
+        return $this->render('index',[ 'products' => $products]);
+    }
+в web.php в конфиге
+// if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'allowedIPs'=>['*']
+    ];
+// } комментировать
+в сайте в индекс пхп вывести что надо
+в контроллере обработка работы с данными
+=======================
+sudo apt get install nginx
+sudo nano /etc/nginx/sites-available/yiileto
+sudo ln -s /etc/nginx/sites-available/letoyii /etc/nginx/sites-enabled/
+sudo service nginx restart
+sudo nginx -t -какие ошибки
+на папку куда копируешь
+sudo chmod 77 -R web/
+
+
+getjump.me
+php правильный путь
+awesome php
+htmlcsstherightway.org
+
+wordpress
+opencart
+magenta
+
+
+https://github.com/vhf/free-programming-books
